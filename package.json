@@ -1,0 +1,24 @@
+{
+  "name": "playing-with-rust",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ericwooley/playing-with-rust",
+  "author": "Eric Wooley <ericwooley@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "cd test-rust; wasm-pack build --target=nodejs",
+    "run-node-test": "yarn ts-node --transpile-only test-node/index.ts"
+  },
+  "workspaces": [
+    "test-rust/pkg",
+    "test-node"
+  ],
+  "dependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6"
+  }
+}
